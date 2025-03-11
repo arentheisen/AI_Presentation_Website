@@ -47,10 +47,12 @@
         </section>
 
         <section id="demo">
-            <h2>Technical Demo: How AI Works</h2>
-            <p>This will include a walkthrough of chatbot architecture and live interaction.</p>
-            <div id="chatbot-placeholder">
-                <p>💬 Chatbot coming soon...</p>
+            <h2>Technical Demo: AI Chatbot</h2>
+            <p>Chat with AI below:</p>
+            <div id="chat-container">
+                <div id="chat-box"></div>
+                <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
             </div>
         </section>
 
@@ -65,7 +67,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 AI Presentation | Created for Educational Purposes</p>
     </footer>
