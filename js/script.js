@@ -28,34 +28,39 @@ function handleKeyPress(event) {
 // Function to append messages to chat
 function appendMessage(sender, message) {
     let chatBox = document.getElementById("chat-box");
+
     let msgDiv = document.createElement("div");
     msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    msgDiv.style.padding = "5px";
+    msgDiv.style.borderBottom = "1px solid #ddd";
     chatBox.appendChild(msgDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
+
+    chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
 }
 
 // Function to get AI response
 function getBotResponse(input) {
-    // If chatbot has been trained with this input, return the stored response
     if (chatbotMemory[input]) {
-        return chatbotMemory[input];
+        return chatbotMemory[input]; // Return stored response
     }
 
-    // Default response for unknown input
-    return `I don't know how to respond to that. How should I reply? (Type: train [response])`;
+    return `I don't know how to respond to that. Type "train [your response]" to teach me!`;
 }
 
-// Training function
+// Training function (User types: train [response])
 document.addEventListener("keydown", function(event) {
     let userInput = document.getElementById("user-input").value.trim().toLowerCase();
     if (event.key === "Enter" && userInput.startsWith("train ")) {
-        let parts = userInput.split("train ");
-        if (parts.length > 1) {
-            let lastUserInput = document.querySelector("#chat-box div:last-child strong").nextSibling.nodeValue.trim();
-            chatbotMemory[lastUserInput] = parts[1];
+        let response = userInput.replace("train ", "").trim();
+        let chatBoxMessages = document.querySelectorAll("#chat-box div");
+        
+        if (chatBoxMessages.length >= 2) {
+            let lastUserInput = chatBoxMessages[chatBoxMessages.length - 2].innerText.replace("You:", "").trim();
+            chatbotMemory[lastUserInput] = response;
             localStorage.setItem("chatbotMemory", JSON.stringify(chatbotMemory));
             appendMessage("AI", "Thanks! I learned a new response.");
         }
+        
         document.getElementById("user-input").value = "";
     }
 });
