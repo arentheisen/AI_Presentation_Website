@@ -1,4 +1,3 @@
-
 const BACKEND_URL = "https://ai-presentation-website.vercel.app/api/chat";
 
 const SYSTEM_PROMPT = `
@@ -72,7 +71,7 @@ function removeLastMessage() {
   }
 }
 
-// 🔍 AI Image Activity Logic
+// --- AI Image Activity ---
 const images = [
   {
     src: "images/AIActivity1.png",
@@ -114,11 +113,11 @@ const images = [
 let currentImage = 0;
 let score = 0;
 
-function launchImageActivity() {
+window.launchImageActivity = function () {
   document.getElementById("launch-activity-btn").style.display = "none";
   document.getElementById("activity-container").style.display = "block";
   showImage();
-}
+};
 
 function showImage() {
   const imgData = images[currentImage];
@@ -126,7 +125,7 @@ function showImage() {
   document.getElementById("feedback").textContent = "";
 }
 
-function handleGuess(guessIsAI) {
+window.handleGuess = function (guessIsAI) {
   const imgData = images[currentImage];
   const feedback = document.getElementById("feedback");
 
@@ -151,4 +150,4 @@ function handleGuess(guessIsAI) {
       score = 0;
     }, 3000);
   }
-}
+};
