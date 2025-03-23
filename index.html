@@ -1,131 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI in Business - Presentation</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Business - Presentation</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div id="content-container">
-    <header>
-      <h1>AI in Business: Presentation</h1>
-      <nav>
-        <ul>
-          <li><a href="#intro">Introduction</a></li>
-          <li><a href="#role">AI's Role</a></li>
-          <li><a href="#implementation">Implementation</a></li>
-          <li><a href="#ethics">Ethics</a></li>
-          <li><a href="#demo">Demo</a></li>
-          <li><a href="#future">Future</a></li>
-          <li><a href="#quiz">Quiz</a></li>
-          <li><a href="#references">References</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Left Content Section -->
+    <div id="content-container">
+        <header>
+            <h1>AI in Business: Presentation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#role">AI's Role</a></li>
+                    <li><a href="#implementation">Implementation</a></li>
+                    <li><a href="#ethics">Ethics</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#future">Future</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-      <section id="intro">
-        <h2>Introduction to AI and Neural Networks</h2>
+        <main>
+            <section id="intro">
+                <h2>Introduction to AI and Neural Networks</h2>
 
-        <h3>What is Artificial Intelligence?</h3>
-        <p><strong>Artificial Intelligence (AI)</strong> refers to the simulation of human intelligence in machines that are programmed to think, learn, and solve problems. In business, AI helps automate tasks, analyze data, predict trends, and improve decision-making — leading to increased efficiency, cost savings, and innovation.</p>
+                <h3>What is Artificial Intelligence?</h3>
+                <p>Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and solve problems. In business, AI helps automate tasks, analyze data, predict trends, and improve decision-making — leading to increased efficiency, cost savings, and innovation.</p>
 
-        <h3>Types of AI</h3>
-        <ul>
-          <li><strong>Rule-Based Systems:</strong> Follow predefined rules to make decisions. Simple but not adaptive.</li>
-          <li><strong>Machine Learning (ML):</strong> Allows computers to learn and improve from data without explicit programming.</li>
-          <li><strong>Deep Learning:</strong> A powerful subset of ML using layered neural networks to handle complex tasks like image recognition and translation.</li>
-        </ul>
+                <h3>Types of AI</h3>
+                <ul>
+                    <li><strong>Rule-Based Systems:</strong> These systems follow a predefined set of rules to make decisions. They’re simple and transparent but can’t adapt or learn from data.</li>
+                    <li><strong>Machine Learning (ML):</strong> ML uses statistical techniques that allow computers to learn from data and improve their performance without being explicitly programmed.</li>
+                    <li><strong>Deep Learning:</strong> A subset of ML, deep learning uses layered neural networks to process data and learn complex patterns — especially useful in tasks like image recognition or language translation.</li>
+                </ul>
+<h3>Deep Learning Visual</h3>
+<div style="text-align: center; margin: 20px 0;">
+    <img src="images/Deep Learning image.png" alt="Deep Learning Visual" style="max-width: 100%; width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+    <p style="font-style: italic; margin-top: 8px;">Figure: Example architecture of a deep learning neural network</p>
+</div>
 
-        <img src="images/Deep Learning image.png" alt="Deep Learning Diagram" style="max-width:100%; border-radius:8px; margin:20px 0;" />
+                <h3>Neural Networks and Transformers (Basic Overview)</h3>
+                <p><strong>Neural Networks</strong> are inspired by the structure of the human brain. They consist of layers of nodes (neurons) that process input data to recognize patterns and make predictions.</p>
+                <p><strong>Transformers</strong> are a modern architecture used primarily in language models. They process input data (like text) all at once, rather than sequentially, allowing for faster and more accurate language understanding.</p>
 
-        <h3>Neural Networks and Transformers</h3>
-        <p><strong>Neural Networks:</strong> Modeled after the human brain, consist of layers of nodes that learn patterns from data.</p>
-        <p><strong>Transformers:</strong> A powerful architecture for processing language data all at once (not sequentially) to improve speed and accuracy.</p>
+                <h3>AI in Business: Real-World Examples</h3>
+                <ul>
+                    <li><strong>Coca-Cola:</strong> Uses AI to analyze customer data, develop new products, monitor social media sentiment, and optimize vending machine pricing.</li>
+                    <li><strong>UPS:</strong> Uses its ORION system to optimize delivery routes using machine learning, saving fuel and reducing emissions.</li>
+                    <li><strong>JLL (Jones Lang LaSalle):</strong> Implements AI tools like JiLL, a digital assistant that helps brokers access property data and streamline real estate processes.</li>
+                    <li><strong>Pfizer:</strong> Applies AI to accelerate drug discovery, analyze clinical data, and manage vaccine logistics.</li>
+                    <li><strong>Spotify:</strong> Uses deep learning to recommend songs and curate playlists based on user behavior and preferences.</li>
+                    <li><strong>Walmart:</strong> Uses AI in inventory management, customer behavior prediction, and store operations through computer vision.</li>
+                </ul>
 
-        <h3>AI in Business: Real-World Examples</h3>
-        <ul>
-          <li><strong>Coca-Cola:</strong> Uses AI to analyze customer data, develop new products, and optimize vending machines.</li>
-          <li><strong>UPS:</strong> Applies AI to delivery route optimization with ORION.</li>
-          <li><strong>JLL:</strong> Uses AI-powered assistants like JiLL to support real estate operations.</li>
-          <li><strong>Pfizer:</strong> Leverages AI for vaccine logistics and drug discovery.</li>
-          <li><strong>Spotify:</strong> Uses deep learning to recommend music.</li>
-          <li><strong>Walmart:</strong> Utilizes AI for inventory, demand prediction, and store analytics.</li>
-        </ul>
+                <h3>What Are Large Language Models?</h3>
+                <p>Large Language Models (LLMs) are a type of deep learning AI trained on massive text datasets to understand and generate human-like language. Examples include OpenAI’s GPT-4 and Google’s BERT. These models power chatbots, customer service tools, legal document analyzers, and marketing content generators. They are built on transformer architectures and use attention mechanisms to analyze context and meaning efficiently.</p>
+            </section>
 
-        <h3>What Are Large Language Models?</h3>
-        <p><strong>Large Language Models (LLMs)</strong> like GPT-4 are trained on massive datasets to understand and generate natural language. These models power chatbots, assistants, and other smart tools, enabling businesses to automate communication and content generation.</p>
-      </section>
+            <section id="role">
+                <h2>AI’s Role in Business Systems</h2>
+                <p>How AI enhances efficiency, decision-making, and automation.</p>
+            </section>
 
-      <section id="role">
-        <h2>AI’s Role in Business Systems</h2>
-        <p><strong>AI enhances efficiency</strong> by automating repetitive tasks, improves <strong>decision-making</strong> through data analysis, and enables <strong>scalability</strong> by supporting faster responses to customer and market demands.</p>
-        <p>Examples include AI-powered chatbots, recommendation engines, fraud detection systems, and robotic process automation (RPA).</p>
-      </section>
+            <section id="implementation">
+                <h2>Implementing AI Effectively</h2>
+                <p>Key steps for AI adoption, including case studies of failures and successes.</p>
+            </section>
 
-      <section id="implementation">
-        <h2>Implementing AI Effectively</h2>
-        <p>Implementing AI requires:</p>
-        <ul>
-          <li><strong>Clear business objectives</strong></li>
-          <li><strong>Quality data and infrastructure</strong></li>
-          <li><strong>Skilled teams for integration and maintenance</strong></li>
-        </ul>
-        <p>Success stories include AI adoption in logistics (e.g., Amazon) and personalized marketing. Failure examples stem from poor data or lack of user training.</p>
-      </section>
+            <section id="ethics">
+                <h2>Ethical AI and Workforce Impact</h2>
+                <p>Artificial Intelligence has dramatically reshaped the workforce, igniting debates over whether AI leads to mass job displacement or serves as a tool to augment human potential. The truth lies somewhere in between. While AI can automate routine or repetitive tasks, it also enables humans to focus on higher-level strategic thinking, creativity, and interpersonal communication—skills machines still struggle to replicate effectively.</p>
 
-      <section id="ethics">
-        <h2>Ethical AI and Workforce Impact</h2>
-        <p>AI raises ethical concerns about <strong>job displacement, algorithmic bias, data privacy</strong>, and <strong>accountability</strong>. However, it also offers opportunities to <strong>augment human work</strong> and create new roles such as AI trainers or prompt engineers.</p>
-        <p>Companies like Microsoft and IBM have adopted internal <strong>AI ethics boards</strong>. Ethical use of AI includes fairness, transparency, and human-centric design. Reskilling and digital literacy are key to future-proofing the workforce.</p>
-      </section>
+                <p>In sectors like manufacturing, customer service, and logistics, automation powered by AI has replaced some human labor. For instance, warehouse robots powered by computer vision and pathfinding algorithms now handle tasks that previously required manual input. AI-driven chatbots are handling basic customer inquiries, reducing the need for entry-level service agents. However, these tools do not eliminate the human workforce altogether; they shift the nature of work. In many cases, humans are still needed to manage, fine-tune, and supervise these systems.</p>
 
-      <section id="demo">
-        <h2>Technical Demo: How AI Works</h2>
-        <p>This section demonstrates a real AI chatbot—powered by OpenAI’s GPT—showcasing how natural language understanding and generation works in practice.</p>
-        <button id="toggle-chatbot" onclick="toggleChatbot()">Launch Chatbot</button>
-      </section>
+                <p>One example of this augmentation model is seen in healthcare. AI is being used to scan medical images and assist with diagnoses, but human doctors are still the ultimate decision-makers. Rather than replacing radiologists, AI provides them with an advanced toolset to improve accuracy and efficiency. This same principle is being applied across marketing, cybersecurity, and education—where AI enhances human capability instead of replacing it.</p>
 
-      <section id="future">
-        <h2>Future of AI in Business & Q&A</h2>
-        <p>AI will continue to evolve in areas like:</p>
-        <ul>
-          <li>Agent-based systems</li>
-          <li>Human-AI collaboration</li>
-          <li>Explainable AI (XAI)</li>
-          <li>AI governance and regulation</li>
-        </ul>
-        <p>This section is for final audience questions and discussion.</p>
-      </section>
+                <p>The emergence of generative AI tools like ChatGPT and Midjourney has raised new ethical considerations. Artists, writers, and designers now face questions about originality, authorship, and intellectual property. Additionally, the use of AI to generate synthetic images and deepfakes has created concern over misinformation and the erosion of public trust in media.</p>
 
-      <section id="quiz">
-        <h2>Quiz</h2>
-        <p>A short interactive quiz to wrap up the presentation and test understanding.</p>
-      </section>
+                <p>To address these impacts, upskilling and reskilling the workforce is essential. Organizations must invest in education and training programs that empower employees to work alongside AI systems rather than compete with them. Skills like data literacy, AI system management, prompt engineering, and digital communication are quickly becoming essential in the modern workplace. Governments and educational institutions also play a role in ensuring that curriculum evolves to reflect the AI-driven economy.</p>
 
-      <section id="references">
-        <h2>References</h2>
-        <ul>
-          <li><a href="https://www.forbes.com/sites/forbestechcouncil/2021/03/11/how-coca-cola-uses-ai-to-listen-to-customers-and-drive-innovation/" target="_blank">Forbes - Coca-Cola and AI</a></li>
-          <li><a href="https://about.ups.com/us/en/newsroom/innovation-driven/technology/2022/orion-ai-route-optimization.html" target="_blank">UPS - AI in Logistics</a></li>
-          <li><a href="https://www.us.jll.com/en/technologies/jill-digital-assistant" target="_blank">JLL - JiLL Digital Assistant</a></li>
-        </ul>
-      </section>
-    </main>
-  </div>
+                <p>Furthermore, ethical frameworks must be established to guide AI development and deployment. Companies like Microsoft and IBM have adopted internal AI ethics boards and policies focusing on fairness, accountability, transparency, and privacy. These initiatives help ensure AI is designed with human values in mind. International organizations such as the OECD and UNESCO have published guidelines on trustworthy AI, promoting human-centric design and oversight.</p>
 
-  <!-- Chatbot Section -->
-  <div id="chat-container">
-    <h3>AI Chatbot</h3>
-    <div id="chat-box"></div>
-    <div id="input-container">
-      <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
-      <button class="send-btn" onclick="sendMessage()">Send</button>
+                <p>On a broader societal level, it’s crucial to ensure that the benefits of AI are shared equitably. If left unchecked, AI could widen the gap between those with access to technology and those without. Disparities in training, job opportunities, and infrastructure can exacerbate existing inequalities. Ensuring inclusion in AI-related decision-making—from diverse hiring practices to community consultation—can help mitigate these risks.</p>
+
+                <p>Ultimately, ethical AI is not just about preventing harm; it’s about proactively shaping a future where technology supports human flourishing. As AI becomes increasingly embedded in daily life, its social impact will be just as significant as its technical capabilities.</p>
+
+               <div class="image-comparison" id="ai-image-activity">
+    <h4>Mini Activity: Are These Photos AI Generated or Real?</h4>
+    <button id="launch-activity-btn" onclick="launchImageActivity()">Launch AI Image Activity</button>
+
+    <div id="activity-container" style="display:none; text-align: center;">
+        <img id="activity-image" src="" alt="AI or Real?" style="width:100%; max-width:500px; border-radius:8px; margin:20px 0;">
+        <div style="margin-bottom: 20px;">
+            <button onclick="handleGuess(true)">AI</button>
+            <button onclick="handleGuess(false)">Real</button>
+        </div>
+        <p id="feedback" style="font-size: 18px;"></p>
     </div>
-  </div>
+</div>
 
-  <script src="js/script.js"></script>
+            </section>
+
+            <section id="demo">
+                <h2>Technical Demo: How AI Works</h2>
+                <p>This section demonstrates a real, functioning AI chatbot—showing how artificial intelligence can be embedded into a business website or application. The chatbot you’re interacting with is powered by a large language model and runs through a structured system of components, each contributing to its ability to understand language and generate human-like responses.</p>
+
+                <p>At the core of the chatbot is something called <strong>Natural Language Processing (NLP)</strong>. NLP is a field within AI focused on enabling machines to understand and respond to human language. When you type a message, the chatbot uses NLP techniques to break down your input into tokens—smaller parts like words, phrases, and punctuation—and then analyzes the structure and intent behind your message.</p>
+
+                <p>Once your message is interpreted, the chatbot passes it to a pre-trained <strong>language model</strong>. In this case, we’re using an API like OpenAI’s GPT. These models have been trained on massive datasets of internet text to learn grammar, reasoning, and even subtle nuances in tone and meaning.</p>
+
+                <p>The chatbot connects to this intelligence using an <strong>API</strong>—a bridge between your frontend and the AI model. It sends the user’s message, retrieves a response from the model, and displays the reply in real time.</p>
+
+                <p>On the backend, the chatbot structure includes:
+                    <ul>
+                        <li>A frontend (HTML/CSS/JS chat UI)</li>
+                        <li>A backend service (like Vercel or Node.js) to send secure requests</li>
+                        <li>An API call to OpenAI’s model</li>
+                        <li>A return path to display the AI-generated response</li>
+                    </ul>
+                </p>
+
+                <p>This live demo shows how the chatbot can understand, respond, and adapt to various inputs. While it doesn’t learn from conversations individually, it is part of a system constantly being improved with new updates and broader training data.</p>
+
+                <button id="toggle-chatbot" onclick="toggleChatbot()">Launch Chatbot</button>
+            </section>
+
+            <section id="future">
+                <h2>Future of AI in Business & Q&A</h2>
+                <p>Discussing AI trends and answering audience questions.</p>
+            </section>
+
+            <section id="quiz">
+                <h2>Quiz</h2>
+                <p>A short quiz to wrap up the presentation.</p>
+            </section>
+
+            <section id="references">
+                <h2>References</h2>
+                <ul>
+                    <li><a href="https://www.forbes.com/sites/forbestechcouncil/2021/03/11/how-coca-cola-uses-ai-to-listen-to-customers-and-drive-innovation/" target="_blank">Forbes - How Coca-Cola Uses AI to Listen to Customers and Drive Innovation</a></li>
+                    <li><a href="https://about.ups.com/us/en/newsroom/innovation-driven/technology/2022/orion-ai-route-optimization.html" target="_blank">UPS - Inside ORION: How AI Is Revolutionizing Logistics</a></li>
+                    <li><a href="https://www.us.jll.com/en/technologies/jill-digital-assistant" target="_blank">JLL - JiLL Digital Assistant for Commercial Real Estate</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Chatbot Section (Hidden Initially) -->
+    <div id="chat-container">
+        <h3>AI Chatbot</h3>
+        <div id="chat-box"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
