@@ -8,20 +8,18 @@ Answer only related questions and avoid unrelated topics.
 `;
 
 function toggleChatbot() {
-    let chatbot = document.getElementById("chat-container");
-    let content = document.getElementById("content-container");
-    let button = document.getElementById("toggle-chatbot");
+    const chatbot = document.getElementById("chat-container");
+    const button = document.getElementById("toggle-chatbot");
 
-    if (chatbot.style.display === "none" || chatbot.style.display === "") {
-        chatbot.style.display = "flex";
-        document.body.classList.add("chatbot-open");
-        button.textContent = "Close Chatbot";
-    } else {
-        chatbot.style.display = "none";
+    if (document.body.classList.contains("chatbot-open")) {
         document.body.classList.remove("chatbot-open");
         button.textContent = "Launch Chatbot";
+    } else {
+        document.body.classList.add("chatbot-open");
+        button.textContent = "Close Chatbot";
     }
 }
+
 
 async function sendMessage() {
     let inputEl = document.getElementById("user-input");
