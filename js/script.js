@@ -110,10 +110,10 @@ function handleGuess(guessIsAI) {
 
   if (guessIsAI === imgData.isAI) {
     score++;
-    feedback.innerHTML = `<span style="color: green;">${imgData.explanation}</span>`;
+    feedback.innerHTML = `<span style="color: green;">✅ Correct! ${imgData.explanation}</span>`;
   } else {
-    const correct = imgData.isAI ? "AI-generated" : "a real image";
-    feedback.innerHTML = `<span style="color: red;">❌ Incorrect. This was ${correct}.</span><br>${imgData.explanation}`;
+    const correct = imgData.isAI ? "an AI-generated image" : "a real image";
+    feedback.innerHTML = `<span style="color: red;">❌ Incorrect. This was ${correct}.</span>`;
   }
 
   currentImage++;
@@ -130,3 +130,4 @@ function handleGuess(guessIsAI) {
     }, 3000);
   }
 }
+
