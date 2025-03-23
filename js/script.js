@@ -1,11 +1,7 @@
-const OPENAI_API_KEY = "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";  
+// Update this with your actual Vercel deployment URL
+const BACKEND_URL = "https://ai-presentation-website.vercel.app/api/chat";
 
-
-const SYSTEM_PROMPT = `
-You are an AI chatbot designed for a school presentation on AI in business.
-Answer only related questions and avoid unrelated topics.
-`;
-
+// Toggle chatbot visibility and page resizing
 function toggleChatbot() {
     let chatbot = document.getElementById("chat-container");
     let content = document.getElementById("content-container");
@@ -13,7 +9,7 @@ function toggleChatbot() {
 
     if (chatbot.style.display === "none" || chatbot.style.display === "") {
         chatbot.style.display = "flex";
-        document.body.classList.add("chatbot-open"); // Ensure content resizes
+        document.body.classList.add("chatbot-open");
         button.textContent = "Close Chatbot";
     } else {
         chatbot.style.display = "none";
@@ -22,48 +18,59 @@ function toggleChatbot() {
     }
 }
 
+// Send message to the backend and handle response
 async function sendMessage() {
-    let userInput = document.getElementById("user-input").value.trim();
+    let userInputEl = document.getElementById("user-input");
+    let userInput = userInputEl.value.trim();
     if (userInput === "") return;
 
     appendMessage("You", userInput);
-    document.getElementById("user-input").value = "";  // Clear input after sending
+    userInputEl.value = "";
 
-    let botResponse = await getAIResponse(userInput);
-    appendMessage("Chatbot", botResponse);
-}
+    appendMessage("Chatbot", "<em>Thinking...</em>");
 
-async function getAIResponse(userInput) {
     try {
-        let response = await fetch("https://api.openai.com/v1/chat/completions", {
+        let response = await fetch(BACKEND_URL, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${OPENAI_API_KEY}`
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                model: "gpt-4o-mini",
-                messages: [{ role: "system", content: SYSTEM_PROMPT }, { role: "user", content: userInput }]
-            })
+            body: JSON.stringify({ prompt: userInput })
         });
 
         let data = await response.json();
-        return data.choices[0]?.message?.content || "Error retrieving response.";
+
+        // Remove the "Thinking..." message
+        removeLastMessage();
+
+        appendMessage("Chatbot", data.message);
     } catch (error) {
-        return "Error: Unable to connect to OpenAI API.";
+        removeLastMessage();
+        appendMessage("Chatbot", "⚠️ Error: Failed to reach backend.");
     }
 }
 
+// Handle pressing "Enter" in the input box
 function handleKeyPress(event) {
     if (event.key === "Enter") {
         sendMessage();
     }
 }
 
+// Append a message to the chat window
 function appendMessage(sender, message) {
     let chatBox = document.getElementById("chat-box");
     let msgDiv = document.createElement("div");
     msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    msgDiv.style.padding = "5px";
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Remove the last message from the chat (used for removing "Thinking...")
+function removeLastMessage() {
+    let chatBox = document.getElementById("chat-box");
+    if (chatBox.lastChild) {
+        chatBox.removeChild(chatBox.lastChild);
+    }
 }
