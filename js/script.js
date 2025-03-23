@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = "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";  
+const OPENAI_API_KEY = "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";  
 
 
 const SYSTEM_PROMPT = `
