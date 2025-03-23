@@ -1,43 +1,81 @@
-export default async function handler(req, res) {
-  // ✅ CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "https://arentheisen.github.io");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+// 🔐 Your secure backend endpoint hosted on Vercel
+const BACKEND_URL = "https://ai-presentation-website.vercel.app/api/chat";
 
-  // ✅ Handle preflight (OPTIONS) requests
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
+// System prompt for context control (sent from frontend if desired)
+const SYSTEM_PROMPT = `
+You are an AI chatbot designed for a school presentation on AI in business.
+Answer only related questions and avoid unrelated topics.
+`;
 
-  if (req.method !== "POST") {
-    return res.status(405).send("Method Not Allowed");
-  }
+function toggleChatbot() {
+    let chatbot = document.getElementById("chat-container");
+    let content = document.getElementById("content-container");
+    let button = document.getElementById("toggle-chatbot");
 
-  const { prompt } = req.body;
-
-  try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-
-    if (!data.choices || !data.choices[0]) {
-      return res.status(500).json({ message: "No response from OpenAI." });
+    if (chatbot.style.display === "none" || chatbot.style.display === "") {
+        chatbot.style.display = "flex";
+        document.body.classList.add("chatbot-open");
+        button.textContent = "Close Chatbot";
+    } else {
+        chatbot.style.display = "none";
+        document.body.classList.remove("chatbot-open");
+        button.textContent = "Launch Chatbot";
     }
+}
 
-    res.status(200).json({ message: data.choices[0].message.content });
+async function sendMessage() {
+    let inputEl = document.getElementById("user-input");
+    let userInput = inputEl.value.trim();
+    if (userInput === "") return;
 
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).json({ message: "Unable to connect to OpenAI API." });
-  }
+    appendMessage("You", userInput);
+    inputEl.value = ""; // Clear the input field
+    appendMessage("Chatbot", "<em>Thinking...</em>");
+
+    let botResponse = await getAIResponse(userInput);
+
+    removeLastMessage(); // Remove "Thinking..."
+    appendMessage("Chatbot", botResponse);
+}
+
+async function getAIResponse(userInput) {
+    try {
+        let response = await fetch(BACKEND_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                prompt: `${SYSTEM_PROMPT}\nUser: ${userInput}`
+            })
+        });
+
+        let data = await response.json();
+        return data.message || "⚠️ No response received.";
+    } catch (error) {
+        console.error("Chatbot error:", error);
+        return "⚠️ Error: Unable to connect to server.";
+    }
+}
+
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+}
+
+function appendMessage(sender, message) {
+    let chatBox = document.getElementById("chat-box");
+    let msgDiv = document.createElement("div");
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    msgDiv.style.padding = "5px";
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function removeLastMessage() {
+    let chatBox = document.getElementById("chat-box");
+    if (chatBox.lastChild) {
+        chatBox.removeChild(chatBox.lastChild);
+    }
 }
