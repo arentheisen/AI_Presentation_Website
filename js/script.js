@@ -70,3 +70,63 @@ function removeLastMessage() {
     chatBox.removeChild(chatBox.lastChild);
   }
 }
+// 🔍 AI Image Activity Logic
+const images = [
+  {
+    src: "images/AIActivity1.png",
+    isAI: true,
+    explanation: "✅ Correct! The image of a dawn marine layer of fog hovering in a valley was AI-generated."
+  },
+  {
+    src: "images/AIActivity2.png",
+    isAI: false,
+    explanation: "✅ Correct! The tasty-looking avocado toast on the white paper plate is a real image."
+  },
+  {
+    src: "images/AIActivity3.png",
+    isAI: true,
+    explanation: "✅ Correct! The skier standing in the freshly fallen powder in Mott Canyon was AI-generated."
+  }
+];
+
+let currentImage = 0;
+let score = 0;
+
+function launchImageActivity() {
+  document.getElementById("launch-activity-btn").style.display = "none";
+  document.getElementById("activity-container").style.display = "block";
+  showImage();
+}
+
+function showImage() {
+  const imgData = images[currentImage];
+  document.getElementById("activity-image").src = imgData.src;
+  document.getElementById("feedback").textContent = "";
+}
+
+function handleGuess(guessIsAI) {
+  const imgData = images[currentImage];
+  const feedback = document.getElementById("feedback");
+
+  if (guessIsAI === imgData.isAI) {
+    score++;
+    feedback.innerHTML = `<span style="color: green;">${imgData.explanation}</span>`;
+  } else {
+    const correct = imgData.isAI ? "AI-generated" : "a real image";
+    feedback.innerHTML = `<span style="color: red;">❌ Incorrect. This was ${correct}.</span><br>${imgData.explanation}`;
+  }
+
+  currentImage++;
+  if (currentImage < images.length) {
+    setTimeout(() => showImage(), 2500);
+  } else {
+    setTimeout(() => {
+      document.getElementById("activity-container").style.display = "none";
+      document.getElementById("launch-activity-btn").style.display = "inline-block";
+      document.getElementById("launch-activity-btn").textContent = `Restart Image Activity`;
+      alert(`You got ${score}/3 correct!`);
+      currentImage = 0;
+      score = 0;
+    }, 3000);
+  }
+}
