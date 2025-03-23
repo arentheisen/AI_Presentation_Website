@@ -86,10 +86,20 @@
 
                 <p>Ultimately, ethical AI is not just about preventing harm; it’s about proactively shaping a future where technology supports human flourishing. As AI becomes increasingly embedded in daily life, its social impact will be just as significant as its technical capabilities.</p>
 
-                <div class="image-comparison">
-                    <h4>AI-Generated Image vs. Real Image</h4>
-                    <p>[Interactive AI vs. Real image demo will be shown here during the presentation]</p>
-                </div>
+               <div class="image-comparison" id="ai-image-activity">
+    <h4>Mini Activity: Are These Photos AI Generated or Real?</h4>
+    <button id="launch-activity-btn" onclick="launchImageActivity()">Launch AI Image Activity</button>
+
+    <div id="activity-container" style="display:none; text-align: center;">
+        <img id="activity-image" src="" alt="AI or Real?" style="width:100%; max-width:500px; border-radius:8px; margin:20px 0;">
+        <div style="margin-bottom: 20px;">
+            <button onclick="handleGuess(true)">AI</button>
+            <button onclick="handleGuess(false)">Real</button>
+        </div>
+        <p id="feedback" style="font-size: 18px;"></p>
+    </div>
+</div>
+
             </section>
 
             <section id="demo">
