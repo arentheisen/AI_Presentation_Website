@@ -5,6 +5,8 @@ You are an AI chatbot designed for a school presentation on AI in business.
 Answer only related questions and avoid unrelated topics.
 `;
 
+// ==== Chatbot Functions ====
+
 function toggleChatbot() {
   const chatbot = document.getElementById("chat-container");
   const button = document.getElementById("toggle-chatbot");
@@ -71,7 +73,8 @@ function removeLastMessage() {
   }
 }
 
-// --- AI Image Activity ---
+// ==== AI Image Activity ====
+
 const images = [
   {
     src: "images/AIActivity1.png",
@@ -113,6 +116,7 @@ const images = [
 let currentImage = 0;
 let score = 0;
 
+// Make activity functions accessible from HTML onclick
 window.launchImageActivity = function () {
   document.getElementById("launch-activity-btn").style.display = "none";
   document.getElementById("activity-container").style.display = "block";
