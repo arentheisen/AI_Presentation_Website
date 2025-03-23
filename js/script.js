@@ -75,17 +75,37 @@ const images = [
   {
     src: "images/AIActivity1.png",
     isAI: true,
-    explanation: "✅ Correct! The image of a dawn marine layer of fog hovering in a valley was AI-generated."
+    explanation: "The image of a dawn marine layer of fog hovering in a valley was AI-generated."
   },
   {
     src: "images/AIActivity2.png",
     isAI: false,
-    explanation: "✅ Correct! The tasty-looking avocado toast on the white paper plate is a real image."
+    explanation: "The tasty-looking avocado toast on the white paper plate is a real image."
   },
   {
     src: "images/AIActivity3.png",
     isAI: true,
-    explanation: "✅ Correct! The skier standing in the freshly fallen powder in Mott Canyon was AI-generated."
+    explanation: "The skier standing in the freshly fallen powder in Mott Canyon at Heavenly Resort in Lake Tahoe, Nevada, is AI-generated."
+  },
+  {
+    src: "images/AIActivity4.png",
+    isAI: false,
+    explanation: "This is a 100% real photograph of Lake Tahoe taken in Incline Village, Nevada."
+  },
+  {
+    src: "images/AIActivity5.png",
+    isAI: true,
+    explanation: "The image of the rocky lakeshore, though very much looking like the eastern shore of Lake Tahoe, was AI-generated."
+  },
+  {
+    src: "images/AIActivity6.png",
+    isAI: true,
+    explanation: "The delicious-looking avocado toast on the dark stoneware plate is nearly perfect, and also AI-generated."
+  },
+  {
+    src: "images/AIActivity7.png",
+    isAI: false,
+    explanation: "The image of an enthusiastic crowd at a Classixx show at the Outside Lands music festival in San Francisco in 2015 is a real photograph."
   }
 ];
 
