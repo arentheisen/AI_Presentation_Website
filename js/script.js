@@ -1,3 +1,4 @@
+
 const BACKEND_URL = "https://ai-presentation-website.vercel.app/api/chat";
 
 const SYSTEM_PROMPT = `
@@ -70,6 +71,7 @@ function removeLastMessage() {
     chatBox.removeChild(chatBox.lastChild);
   }
 }
+
 // 🔍 AI Image Activity Logic
 const images = [
   {
@@ -150,20 +152,3 @@ function handleGuess(guessIsAI) {
     }, 3000);
   }
 }
-
-
-  currentImage++;
-  if (currentImage < images.length) {
-    setTimeout(() => showImage(), 2500);
-  } else {
-    setTimeout(() => {
-      document.getElementById("activity-container").style.display = "none";
-      document.getElementById("launch-activity-btn").style.display = "inline-block";
-      document.getElementById("launch-activity-btn").textContent = `Restart Image Activity`;
-      alert(`You got ${score}/3 correct!`);
-      currentImage = 0;
-      score = 0;
-    }, 3000);
-  }
-}
-
