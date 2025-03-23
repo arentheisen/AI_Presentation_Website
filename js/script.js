@@ -144,6 +144,22 @@ function handleGuess(guessIsAI) {
       document.getElementById("activity-container").style.display = "none";
       document.getElementById("launch-activity-btn").style.display = "inline-block";
       document.getElementById("launch-activity-btn").textContent = `Restart Image Activity`;
+      alert(`You got ${score}/${images.length} correct!`);
+      currentImage = 0;
+      score = 0;
+    }, 3000);
+  }
+}
+
+
+  currentImage++;
+  if (currentImage < images.length) {
+    setTimeout(() => showImage(), 2500);
+  } else {
+    setTimeout(() => {
+      document.getElementById("activity-container").style.display = "none";
+      document.getElementById("launch-activity-btn").style.display = "inline-block";
+      document.getElementById("launch-activity-btn").textContent = `Restart Image Activity`;
       alert(`You got ${score}/3 correct!`);
       currentImage = 0;
       score = 0;
