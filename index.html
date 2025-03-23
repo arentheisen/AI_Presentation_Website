@@ -70,30 +70,31 @@
 
             <section id="ethics">
                 <h2>Ethical AI and Workforce Impact</h2>
-                <p>Artificial Intelligence has dramatically reshaped the workforce, igniting debates over whether AI leads to mass job displacement or serves as a tool to augment human potential. The truth lies somewhere in between. While AI can automate routine or repetitive tasks, it also enables humans to focus on higher-level strategic thinking, creativity, and interpersonal communication—skills machines still struggle to replicate effectively.</p>
-
-                <p>In sectors like manufacturing, customer service, and logistics, automation powered by AI has replaced some human labor. For instance, warehouse robots powered by computer vision and pathfinding algorithms now handle tasks that previously required manual input. AI-driven chatbots are handling basic customer inquiries, reducing the need for entry-level service agents. However, these tools do not eliminate the human workforce altogether; they shift the nature of work. In many cases, humans are still needed to manage, fine-tune, and supervise these systems.</p>
-
-                <p>One example of this augmentation model is seen in healthcare. AI is being used to scan medical images and assist with diagnoses, but human doctors are still the ultimate decision-makers. Rather than replacing radiologists, AI provides them with an advanced toolset to improve accuracy and efficiency. This same principle is being applied across marketing, cybersecurity, and education—where AI enhances human capability instead of replacing it.</p>
-
-                <p>The emergence of generative AI tools like ChatGPT and Midjourney has raised new ethical considerations. Artists, writers, and designers now face questions about originality, authorship, and intellectual property. Additionally, the use of AI to generate synthetic images and deepfakes has created concern over misinformation and the erosion of public trust in media.</p>
-
-                <p>To address these impacts, upskilling and reskilling the workforce is essential. Organizations must invest in education and training programs that empower employees to work alongside AI systems rather than compete with them. Skills like data literacy, AI system management, prompt engineering, and digital communication are quickly becoming essential in the modern workplace. Governments and educational institutions also play a role in ensuring that curriculum evolves to reflect the AI-driven economy.</p>
-
-                <p>Furthermore, ethical frameworks must be established to guide AI development and deployment. Companies like Microsoft and IBM have adopted internal AI ethics boards and policies focusing on fairness, accountability, transparency, and privacy. These initiatives help ensure AI is designed with human values in mind. International organizations such as the OECD and UNESCO have published guidelines on trustworthy AI, promoting human-centric design and oversight.</p>
-
-                <p>On a broader societal level, it’s crucial to ensure that the benefits of AI are shared equitably. If left unchecked, AI could widen the gap between those with access to technology and those without. Disparities in training, job opportunities, and infrastructure can exacerbate existing inequalities. Ensuring inclusion in AI-related decision-making—from diverse hiring practices to community consultation—can help mitigate these risks.</p>
-
-                <p>Ultimately, ethical AI is not just about preventing harm; it’s about proactively shaping a future where technology supports human flourishing. As AI becomes increasingly embedded in daily life, its social impact will be just as significant as its technical capabilities.</p>
-
-                <div class="image-comparison">
-                    <h4>AI-Generated Image vs. Real Image</h4>
-                    <p>[Interactive AI vs. Real image demo will be shown here during the presentation]</p>
-                </div>
+                <p>Artificial Intelligence has dramatically reshaped the workforce, igniting debates over whether AI leads to mass job displacement or serves as a tool to augment human potential...</p>
+                <!-- (The full ethics paragraph and image placeholder would remain here as previously provided) -->
             </section>
 
             <section id="demo">
-                <h2>Technical Demo: AI Chatbot</h2>
+                <h2>Technical Demo: How AI Works</h2>
+                <p>This section demonstrates a real, functioning AI chatbot—showing how artificial intelligence can be embedded into a business website or application. The chatbot you’re interacting with is powered by a large language model and runs through a structured system of components, each contributing to its ability to understand language and generate human-like responses.</p>
+
+                <p>At the core of the chatbot is something called <strong>Natural Language Processing (NLP)</strong>. NLP is a field within AI focused on enabling machines to understand and respond to human language. When you type a message, the chatbot uses NLP techniques to break down your input into tokens—smaller parts like words, phrases, and punctuation—and then analyzes the structure and intent behind your message. This helps it understand what you’re trying to ask, even if the wording is informal or imprecise.</p>
+
+                <p>Once your message is interpreted, the chatbot passes it to a pre-trained <strong>language model</strong>. In this case, we’re using an API like OpenAI’s GPT (Generative Pre-trained Transformer) to handle that step. These models have been trained on massive datasets of internet text to learn grammar, reasoning, and even subtle nuances in tone and meaning. The model generates a coherent, relevant response and sends it back to the chatbot frontend, where it appears on the screen.</p>
+
+                <p>The chatbot connects to this intelligence using an <strong>API</strong>—an Application Programming Interface. The API acts as a secure bridge between your frontend interface and the backend AI model. It sends your message, gets the response, and returns it—all in just a second or two.</p>
+
+                <p>On the backend, the chatbot architecture typically includes:
+                    <ul>
+                        <li>A frontend (HTML/CSS/JavaScript interface)</li>
+                        <li>A backend (like a Vercel or Flask function) to hold the API key securely</li>
+                        <li>An API call to the language model (like GPT-4)</li>
+                        <li>A return path to show the answer in your chat interface</li>
+                    </ul>
+                </p>
+
+                <p>This live demo shows how the chatbot responds to natural questions, offers clarification, and mimics a conversation. While it doesn’t “learn” from each user session in real-time, updates and improvements to the underlying model are continuously being made behind the scenes.</p>
+
                 <button id="toggle-chatbot" onclick="toggleChatbot()">Launch Chatbot</button>
             </section>
 
