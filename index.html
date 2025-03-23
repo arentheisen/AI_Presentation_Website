@@ -8,69 +8,70 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <h1>AI in Business: Presentation</h1>
-        <nav>
-            <ul>
-                <li><a href="#intro">Introduction</a></li>
-                <li><a href="#role">AI's Role</a></li>
-                <li><a href="#implementation">Implementation</a></li>
-                <li><a href="#ethics">Ethics</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#future">Future</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Left Content Section -->
+    <div id="content-container">
+        <header>
+            <h1>AI in Business: Presentation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#role">AI's Role</a></li>
+                    <li><a href="#implementation">Implementation</a></li>
+                    <li><a href="#ethics">Ethics</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#future">Future</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Main Content Sections -->
-    <main>
-        <section id="intro">
-            <h2>Introduction to AI and Neural Networks</h2>
-            <p>This section will introduce AI, its significance in business, and key AI types.</p>
-        </section>
+        <main>
+            <section id="intro">
+                <h2>Introduction to AI and Neural Networks</h2>
+                <p>This section will introduce AI, its significance in business, and key AI types.</p>
+            </section>
 
-        <section id="role">
-            <h2>AI’s Role in Business Systems</h2>
-            <p>How AI enhances efficiency, decision-making, and automation.</p>
-        </section>
+            <section id="role">
+                <h2>AI’s Role in Business Systems</h2>
+                <p>How AI enhances efficiency, decision-making, and automation.</p>
+            </section>
 
-        <section id="implementation">
-            <h2>Implementing AI Effectively</h2>
-            <p>Key steps for AI adoption, including case studies of failures and successes.</p>
-        </section>
+            <section id="implementation">
+                <h2>Implementing AI Effectively</h2>
+                <p>Key steps for AI adoption, including case studies of failures and successes.</p>
+            </section>
 
-        <section id="ethics">
-            <h2>Ethical AI and Workforce Impact</h2>
-            <p>Discussing AI's impact on employees, job displacement, and ethical considerations.</p>
-        </section>
+            <section id="ethics">
+                <h2>Ethical AI and Workforce Impact</h2>
+                <p>Discussing AI's impact on employees, job displacement, and ethical considerations.</p>
+            </section>
 
-        <!-- Chatbot Section -->
-        <section id="demo">
-            <h2>Technical Demo: AI Chatbot</h2>
-            <p>Chat with AI below:</p>
-            <div id="chat-container">
-                <div id="chat-box"></div>
-                <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </section>
+            <section id="demo">
+                <h2>Technical Demo: AI Chatbot</h2>
+                <button id="toggle-chatbot" onclick="toggleChatbot()">Launch Chatbot</button>
+            </section>
 
-        <section id="future">
-            <h2>Future of AI in Business & Q&A</h2>
-            <p>Discussing AI trends and answering audience questions.</p>
-        </section>
+            <section id="future">
+                <h2>Future of AI in Business & Q&A</h2>
+                <p>Discussing AI trends and answering audience questions.</p>
+            </section>
 
-        <section id="quiz">
-            <h2>Quiz</h2>
-            <p>A short quiz to wrap up the presentation.</p>
-        </section>
-    </main>
+            <section id="quiz">
+                <h2>Quiz</h2>
+                <p>A short quiz to wrap up the presentation.</p>
+            </section>
+        </main>
+    </div>
 
-    <footer>
-        <p>© 2025 AI Presentation | Created for Educational Purposes</p>
-    </footer>
+    <!-- Chatbot Section (Hidden Initially) -->
+    <div id="chat-container" class="hidden">
+        <h3>AI Chatbot</h3>
+        <div id="chat-box"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 
