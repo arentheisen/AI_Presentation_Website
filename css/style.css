@@ -1,36 +1,59 @@
-/* General Styles */
+/* General Layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    height: 100vh;
     background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Fullscreen Content by Default */
+#content-container {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+/* Chatbot Opens and Shrinks Main Content */
+.chatbot-open #content-container {
+    width: 75%; /* Shrinks content when chatbot is open */
+}
+
+/* Professional Header */
+header {
+    background: #003366;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
-/* Header and Navigation */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-}
+/* Navigation */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    text-align: center;
 }
+
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
+
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Sections */
+/* Presentation Content */
 section {
     padding: 40px;
     border-bottom: 1px solid #ddd;
@@ -40,50 +63,85 @@ section {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Chatbot Styles */
-#chat-container {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-}
-
-#chat-box {
-    width: 100%;
-    height: 300px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-#user-input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
+/* Launch Chatbot Button */
 button {
-    padding: 10px;
-    background: blue;
+    padding: 12px 20px;
+    background: #007bff;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 button:hover {
-    background: darkblue;
+    background: #0056b3;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+/* Chatbot Section (Hidden by Default) */
+#chat-container {
+    width: 25%;
+    height: 100vh;
+    background: white;
+    border-left: 2px solid #ccc;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+/* Ensure Content Moves When Chatbot Opens */
+.chatbot-open #chat-container {
+    display: flex;
+}
+
+.chatbot-open #content-container {
+    width: 75%;
+}
+
+/* Chatbox */
+#chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    max-height: 65vh; /* Lowered max-height to ensure space for input */
+}
+
+/* Input and Send Button - Raised Higher */
+#input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Increased margin to push it higher */
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #ccc;
     position: relative;
-    bottom: 0;
-    width: 100%;
+    bottom: 20px; /* Raised input field and button */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+button.send-btn {
+    width: 85px;
+    padding: 12px;
+    border-radius: 5px;
+    height: 50px; /* Ensures button is fully visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
 }
