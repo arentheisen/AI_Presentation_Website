@@ -110,7 +110,23 @@ const images = [
     src: "images/AIActivity7.png",
     isAI: false,
     explanation: "The image of an enthusiastic crowd at a Classixx show at the Outside Lands music festival in San Francisco in 2015 is a real photograph."
+  },
+  {
+    src: "images/AIActivity8.png",
+    isAI: true,
+    explanation: "This image is AI generated."
+  },
+  {
+    src: "images/AIActivity9.png",
+    isAI: true,
+    explanation: "This image is AI generated."
+  },
+  {
+    src: "images/AIActivity10.png",
+    isAI: true,
+    explanation: "This image is AI generated."
   }
+
 ];
 
 let currentImage = 0;
